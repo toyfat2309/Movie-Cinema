@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import {React,useState} from 'react'
 import './App.css';
+import Landingpage from './pages/Landingpage';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import {Routes , Route} from 'react-router-dom'
+import Preview from './pages/Preview';
+import BookTicket from './pages/BookTicket';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Routes>
+      <Route path='/' element={<Landingpage/>}/>
+      <Route path='/preview/:movieTitle' element={<Preview/>}/>
+      <Route path='/bookticket/:movieTitle' element={<BookTicket/>}/>
+    </Routes>
+    </>
   );
 }
 
